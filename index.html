@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>git tips</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,101 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>git tips</h1>
+
+				<p> by Joe Block <a href="mailto:jblock@castlighthealth.com">&#60;jblock@castlighthealth.com&#62;</a></p>
+				</section>
+
+        <section>
+          <section data-markdown>
+            # Global Configuration Changes
+          </section>
+
+          <section data-markdown>
+            ## Make `git` use the right email everywhere
+
+            `git config --global user.email 'you@castlighthealth.com'`
+          </section>
+
+          <section data-markdown>
+            ## Set up autocorrect
+
+            Tired of typos? `git config --global help.autocorrect 1` will fix simple typos for you.
+          </section>
+
+        </section>
+
+        <section>
+
+          <section data-markdown>
+            # Per-repository configuration tweaks
+          </section>
+
+          <section data-markdown>
+            ## Strip trailing whitespace
+
+            Nobody wants to see trailing whitespace in commits. Let `git` automagically clean up your commits.
+          </section>
+
+          <section data-markdown>
+            Create a `.gitattributes` file with contents
+
+            ```
+*.rb filter=trimWhitespace
+            ```
+            in your clone directory
+          </section>
+
+          <section data-markdown>
+            Add `trim_whitespace` somewhere in your `$PATH`
+
+            ```
+#!/usr/bin/env ruby
+
+lines = STDIN.readlines
+lines.each do | line |
+  puts line.rstrip
+end
+            ```
+          </section>
+
+          <section data-markdown>
+            ## Enable your new filter
+
+            ```
+            git config filter.trimWhitespace.clean trim_whitespace
+            ```
+
+            Now every time you do a push from this repo, `git` will automatically trim all the whitespace for you.
+          </section>
+
+        </section>
+
+        <section>
+
+          <section data-markdown>
+            # Day-to-Day Usage tips
+          </section>
+
+          <section data-markdown>
+            ## Searching
+
+            We all know you can `grep` to find things, but `git` will let you search history too.
+
+            `git log -S[searchterm]`
+
+            If you want to see the diff, `git log -S[searchterm] -p`
+          </section>
+
+          <section data-markdown>
+          </section>
+
+          <section data-markdown>
+          </section>
+
+        </section>
+
 			</div>
 		</div>
 
