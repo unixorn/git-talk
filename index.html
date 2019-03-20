@@ -102,6 +102,21 @@ end
           </section>
 
           <section data-markdown>
+            ## Better logs
+
+            Add `plog = log --graph --stat -p` to your `~/.gitconfig`
+
+            Much nicer log info - log + diff + statistics, but a bit verbose
+
+          </section>
+
+          <section data-markdown>
+            ## Another better log
+
+            Add `pretty = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit` and `gr = log --graph` to your `~/.gitconfig`
+          </section>
+
+          <section data-markdown>
             ## Searching
 
             We all know you can `grep` to find things, but `git` will let you search history too.
@@ -109,16 +124,6 @@ end
             `git log -S[searchterm]`
 
             If you want to see the diff, `git log -S[searchterm] -p`
-          </section>
-
-          <section data-markdown>
-            ## Rebasing
-
-            Protect pushed commits from rebasing
-
-            Add `wip = rebase -i @{u}` to `~/.gitconfig`
-
-            `git wip` - automatically rebase just the work in progress commits
           </section>
 
           <section data-markdown>
@@ -148,6 +153,16 @@ end
           </section>
 
           <section data-markdown>
+            ## Rebasing
+
+            Protect pushed commits from rebasing
+
+            Add `wip = rebase -i @{u}` to `~/.gitconfig`
+
+            `git wip` - automatically rebase just the work in progress commits
+          </section>
+
+          <section data-markdown>
             ## Getting ready to make a PR?
 
             Vengada has a great script, `git branch-rebaser` that will interactively rebase all the commits on your branch
@@ -155,13 +170,13 @@ end
 
         </section>
 
-        <section>
+        <section data-markdown>
           # Download these scripts
 
           These scripts and aliases are all documented in [git-extra-commands](https://github.com/unixorn/git-extra-commands)
         </section>
 
-        <section>
+        <section data-markdown>
           Thanks for your time.
         </section>
 
