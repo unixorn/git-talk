@@ -112,9 +112,45 @@ end
           </section>
 
           <section data-markdown>
+            ## Rebasing
+
+            Protect pushed commits from rebasing
+
+            Add `wip = rebase -i @{u}` to `~/.gitconfig`
+
+            `git wip` - automatically rebase just the work in progress commits
           </section>
 
           <section data-markdown>
+            ## Syncing to another fork
+
+            `git upstream-sync` - defaults to pulling from a remote named upstream and pushing to a remote named origin
+          </section>
+
+          <section data-markdown>
+            ## Clean up merged branches
+
+            `git prune-branches`
+
+          </section>
+
+          <section data-markdown>
+            ## Crap, committed on wrong branch
+
+            `git move-commits NUMBER NEW_BRANCH_NAME`
+
+          </section>
+
+          <section data-markdown>
+            ## New branch? Give it an upstream easily
+
+            `git promote` will create a tracking branch on your `origin` remote
+          </section>
+
+          <section data-markdown>
+            ## Getting ready to make a PR?
+
+            Vengada has a great script, `git branch-rebaser` that will interactively rebase all the commits on your branch
           </section>
 
         </section>
